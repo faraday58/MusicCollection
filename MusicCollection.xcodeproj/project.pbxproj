@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4722D43C2A8149B00068D2D4 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4722D43B2A8149B00068D2D4 /* PlayerView.swift */; };
 		47B75AC52A8146440057D5A2 /* MusicCollectionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B75AC42A8146440057D5A2 /* MusicCollectionApp.swift */; };
 		47B75AC72A8146440057D5A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B75AC62A8146440057D5A2 /* ContentView.swift */; };
 		47B75AC92A8146460057D5A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B75AC82A8146460057D5A2 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4722D43B2A8149B00068D2D4 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		47B75AC12A8146440057D5A2 /* MusicCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B75AC42A8146440057D5A2 /* MusicCollectionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionApp.swift; sourceTree = "<group>"; };
 		47B75AC62A8146440057D5A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				47B75AC42A8146440057D5A2 /* MusicCollectionApp.swift */,
 				47B75AC62A8146440057D5A2 /* ContentView.swift */,
+				4722D43B2A8149B00068D2D4 /* PlayerView.swift */,
 				47B75AC82A8146460057D5A2 /* Assets.xcassets */,
 				47B75ACA2A8146460057D5A2 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4722D43C2A8149B00068D2D4 /* PlayerView.swift in Sources */,
 				47B75AC72A8146440057D5A2 /* ContentView.swift in Sources */,
 				47B75AC52A8146440057D5A2 /* MusicCollectionApp.swift in Sources */,
 			);
