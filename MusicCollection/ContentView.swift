@@ -7,19 +7,45 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
+    private let songs: [Song] = [
+        Song(title: "Origins", artist: "Imagine Dragons", imageFront:"origins"),
+        Song(title: "Nightvisions", artist: "The Technicolors", imageFront:"nightvisions"),
+        Song(title: "One more Light", artist: "LinkinPark", imageFront:"onemorelight")
+    ]
+    
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-            Image(systemName: "forward.fill")
-            Text("Apilando elementos ")
+        TabView{
+            Text("Compendio de artistas")
+                .tabItem{
+                    Image(systemName: "person.circle.fill")
+                    Text("Artista")
+                }
+            NavigationView{
+                List{
+                    
+                    ForEach(songs) { song in
+                        NavigationLink(destination: PlayerView()){
+                            ListSong(title: song.title, artist: song.artist, imageFront: song.imageFront)
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+                .tabItem {
+                    Image(systemName: "music.note.list")
+                   
+                }
         }
-        .padding()
-        
     }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
