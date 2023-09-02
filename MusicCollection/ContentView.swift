@@ -10,12 +10,16 @@ import SwiftUI
 
 
 struct ContentView: View {
+ /*
     private let songs: [Song] = [
         Song(title: "Origins", artist: "Imagine Dragons", imageFront:"origins"),
         Song(title: "Nightvisions", artist: "The Technicolors", imageFront:"nightvisions"),
         Song(title: "One more Light", artist: "LinkinPark", imageFront:"onemorelight")
     ]
+   */
     
+    @StateObject var songManager = SongManager()
+  
     
     var body: some View {
         TabView{
@@ -27,9 +31,9 @@ struct ContentView: View {
             NavigationView{
                 List{
                     
-                    ForEach(songs) { song in
-                        NavigationLink(destination: PlayerView(title: song.title, artist: song.artist, imageSong: song.imageFront)){
-                            ListSong(title: song.title, artist: song.artist, imageFront: song.imageFront)
+                    ForEach(songManager.songs, id: \.name ) { song in
+                        NavigationLink(destination: PlayerView(title: song.name, artist: song.artist, imageSong: song.albumImageURL)){
+                            ListSong(title: song.name, artist: song.artist, imageFront: song.albumImageURL)
                             
                         }
                         

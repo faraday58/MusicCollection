@@ -16,12 +16,24 @@ struct Song: Identifiable {
 */
 
 struct Song: Codable {
+    
     var album: String
     var albumImageURL: String
     var artist: String
-    var durarion: String
+    var duration: String
     var name: String
     var year: Int
+    
+    init(album: String, albumImageURL: String, artist: String, duration: String, name: String, year: Int   )
+    {
+        self.album = album
+        self.albumImageURL = albumImageURL
+        self.artist =  artist
+        self.duration = duration
+        self.name = name
+        self.year = year
+        
+    }
 }
 
 

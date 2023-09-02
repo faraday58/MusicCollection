@@ -16,8 +16,8 @@ struct ListSong: View {
     
     var body: some View {
         HStack{
-            Image(imageFront)
-                .resizable()
+            AsyncImage(url: URL(string: imageFront))
+                .frame(maxWidth: 300, maxHeight: 300)
                 .clipShape(RoundedRectangle(
                     cornerRadius: 20
                 ))
