@@ -9,14 +9,40 @@ import SwiftUI
 
 struct PlayerView: View {
     @State private var isPlaying: Bool = false
+    @State var title: String
+    @State var artist: String
+    @State var imageSong: String
     var body: some View {
         
         VStack{
-            Image("origins")
+            
+            Image(imageSong)
                 .resizable()
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .scaledToFit()
                 .padding()
+            VStack(alignment: .leading){
+                
+                HStack{
+                    Text("West Coast")
+                        .font(.title)
+                    Text("(2018)")
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                        .padding(.leading,10)
+                }
+                HStack{
+                    Text(artist)
+                        .font(.subheadline)
+                    //Spacer es para espacios muy grandes y poco configurable
+                    Spacer()
+                    Text(title)
+                        .font(.subheadline)
+                }
+                
+            }.padding()
+           // Spacer()
+            
             
             HStack(spacing: 50){
                 Button {
@@ -47,27 +73,11 @@ struct PlayerView: View {
 
             }.padding()
             
-            VStack(alignment: .leading){
-                
-                HStack{
-                    Text("West Coast")
-                        .font(.title)
-                    Text("(2018)")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                        .padding(.leading,10)
-                }
-                HStack{
-                    Text("Imagine Dragons")
-                        .font(.subheadline)
-                    //Spacer es para espacios muy grandes y poco configurable
-                    Spacer()
-                    Text("Origins")
-                        .font(.subheadline)
-                }
-                
-            }.padding()
-            Spacer()
+            HStack{
+                Text("0:00").padding()
+                Spacer()
+                Text("4:02").padding()
+            }
             
         }
     }
@@ -75,6 +85,6 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerView()
+        PlayerView(title: "Origins", artist: "Imagine Dragons", imageSong: "origins")
     }
 }

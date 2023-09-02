@@ -17,6 +17,11 @@
 		47B75AD62A8146460057D5A2 /* MusicCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B75AD52A8146460057D5A2 /* MusicCollectionTests.swift */; };
 		47B75AE02A8146460057D5A2 /* MusicCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B75ADF2A8146460057D5A2 /* MusicCollectionUITests.swift */; };
 		47B75AE22A8146460057D5A2 /* MusicCollectionUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B75AE12A8146460057D5A2 /* MusicCollectionUITestsLaunchTests.swift */; };
+		47D9A3F92AA2AA5200EA491B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47D9A3F82AA2AA5200EA491B /* GoogleService-Info.plist */; };
+		47D9A3FC2AA2AB6500EA491B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 47D9A3FB2AA2AB6500EA491B /* FirebaseDatabase */; };
+		47D9A3FE2AA2AB6500EA491B /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 47D9A3FD2AA2AB6500EA491B /* FirebaseDatabaseSwift */; };
+		47D9A4002AA2AB6500EA491B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 47D9A3FF2AA2AB6500EA491B /* FirebaseFirestore */; };
+		47D9A4022AA2AB6500EA491B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 47D9A4012AA2AB6500EA491B /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,7 @@
 		47B75ADB2A8146460057D5A2 /* MusicCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B75ADF2A8146460057D5A2 /* MusicCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionUITests.swift; sourceTree = "<group>"; };
 		47B75AE12A8146460057D5A2 /* MusicCollectionUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicCollectionUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		47D9A3F82AA2AA5200EA491B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D9A3FE2AA2AB6500EA491B /* FirebaseDatabaseSwift in Frameworks */,
+				47D9A3FC2AA2AB6500EA491B /* FirebaseDatabase in Frameworks */,
+				47D9A4002AA2AB6500EA491B /* FirebaseFirestore in Frameworks */,
+				47D9A4022AA2AB6500EA491B /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +127,7 @@
 		47B75AC32A8146440057D5A2 /* MusicCollection */ = {
 			isa = PBXGroup;
 			children = (
+				47D9A3F72AA2A9F400EA491B /* Firebase */,
 				47795D582AA1CB9B00DCD8AC /* Models */,
 				47795D532AA1AFA400DCD8AC /* Components */,
 				47B75AC42A8146440057D5A2 /* MusicCollectionApp.swift */,
@@ -152,6 +163,14 @@
 			path = MusicCollectionUITests;
 			sourceTree = "<group>";
 		};
+		47D9A3F72AA2A9F400EA491B /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				47D9A3F82AA2AA5200EA491B /* GoogleService-Info.plist */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,6 +187,12 @@
 			dependencies = (
 			);
 			name = MusicCollection;
+			packageProductDependencies = (
+				47D9A3FB2AA2AB6500EA491B /* FirebaseDatabase */,
+				47D9A3FD2AA2AB6500EA491B /* FirebaseDatabaseSwift */,
+				47D9A3FF2AA2AB6500EA491B /* FirebaseFirestore */,
+				47D9A4012AA2AB6500EA491B /* FirebaseFirestoreSwift */,
+			);
 			productName = MusicCollection;
 			productReference = 47B75AC12A8146440057D5A2 /* MusicCollection.app */;
 			productType = "com.apple.product-type.application";
@@ -240,6 +265,9 @@
 				Base,
 			);
 			mainGroup = 47B75AB82A8146440057D5A2;
+			packageReferences = (
+				47D9A3FA2AA2AB6500EA491B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 47B75AC22A8146440057D5A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,6 +286,7 @@
 			files = (
 				47B75ACC2A8146460057D5A2 /* Preview Assets.xcassets in Resources */,
 				47B75AC92A8146460057D5A2 /* Assets.xcassets in Resources */,
+				47D9A3F92AA2AA5200EA491B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +634,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		47D9A3FA2AA2AB6500EA491B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		47D9A3FB2AA2AB6500EA491B /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47D9A3FA2AA2AB6500EA491B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		47D9A3FD2AA2AB6500EA491B /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47D9A3FA2AA2AB6500EA491B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		47D9A3FF2AA2AB6500EA491B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47D9A3FA2AA2AB6500EA491B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		47D9A4012AA2AB6500EA491B /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47D9A3FA2AA2AB6500EA491B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 47B75AB92A8146440057D5A2 /* Project object */;
 }

@@ -28,7 +28,7 @@ struct ContentView: View {
                 List{
                     
                     ForEach(songs) { song in
-                        NavigationLink(destination: PlayerView()){
+                        NavigationLink(destination: PlayerView(title: song.title, artist: song.artist, imageSong: song.imageFront)){
                             ListSong(title: song.title, artist: song.artist, imageFront: song.imageFront)
                             
                         }
@@ -36,8 +36,9 @@ struct ContentView: View {
                     }
                     
                 }
-                
+                .navigationTitle("Canciones")
             }
+            
                 .tabItem {
                     Image(systemName: "music.note.list")
                    
