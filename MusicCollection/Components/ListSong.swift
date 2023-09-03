@@ -16,18 +16,22 @@ struct ListSong: View {
     
     var body: some View {
         HStack{
-            AsyncImage(url: URL(string: imageFront))
-                .frame(maxWidth: 300, maxHeight: 300)
-                .clipShape(RoundedRectangle(
-                    cornerRadius: 20
-                ))
-                .scaledToFit()
-                .padding()
+            AsyncImage(url: URL(string: imageFront)) { image in
+                image.resizable()
+                    .scaledToFit()
+                    
+            } placeholder: {
+                ProgressView()
+                
+            }.frame(width: 150,height: 150)
+                .cornerRadius(20)
+            
+                
             VStack{
                 
                 Text(title)
                     .bold()
-                    .font(.system(size: 22))
+                    .font(.system(size: 15))
                 Text(artist)
                     
                     .font(.system(size: 10))
@@ -42,6 +46,8 @@ struct ListSong: View {
 
 struct ListSong_Previews: PreviewProvider {
     static var previews: some View {
-        ListSong(title: "Origins", artist: "Imagine Dragons", imageFront: "origins")
+        ListSong(title: "Origins", artist: "Imagine Dragons", imageFront: "https://m.media-amazon.com/images/I/41WiaTk-OYL._AC_.jpg"
+)
+
     }
 }

@@ -12,21 +12,30 @@ struct PlayerView: View {
     @State var title: String
     @State var artist: String
     @State var imageSong: String
+    @State var album: String
+    @State var duration: String
+    @State var year: Int
     var body: some View {
         
         VStack{
             
-            Image(imageSong)
-                .resizable()
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .scaledToFit()
+            AsyncImage(url: URL(string: imageSong)) { image in
+                image.resizable()
+                
+            } placeholder: {
+                ProgressView()
+            }.cornerRadius(20)
+                .frame(width: 350,height: 350)
                 .padding()
+                
+
+        
             VStack(alignment: .leading){
                 
                 HStack{
-                    Text("West Coast")
+                    Text(album)
                         .font(.title)
-                    Text("(2018)")
+                    Text("( \(year)")
                         .font(.subheadline)
                         .foregroundColor(.gray)
                         .padding(.leading,10)
@@ -76,7 +85,7 @@ struct PlayerView: View {
             HStack{
                 Text("0:00").padding()
                 Spacer()
-                Text("4:02").padding()
+                Text(duration).padding()
             }
             
         }
@@ -85,6 +94,7 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerView(title: "Origins", artist: "Imagine Dragons", imageSong: "origins")
+PlayerView(title: "Origins", artist: "Imagine Dragons", imageSong: "https://m.media-amazon.com/images/I/41WiaTk-OYL._AC_.jpg", album: "West Coast", duration: "4:02", year: 2014)
+
     }
 }
